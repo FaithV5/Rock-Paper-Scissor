@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page">
+    <header class="hero">
+      <div>
+        <p class="eyebrow">Arcade Mini</p>
+        <h1>Rock Paper Scissors</h1>
+        <p class="lede">Enjoy playing! Best of luck.</p>
+      </div>
+    </header>
+
+    <main>
+      <section class="view active" id="view-home">
+        <div class="panel stack">
+          <h2>Welcome</h2>
+          <p class="lede">Face off against a robot or a friend. Pick a difficulty, then start throwing moves.</p>
+          <button class="primary" id="startPlayBtn">Play</button>
+        </div>
+      </section>
+
+      <section class="view" id="view-mode">
+        <div class="panel stack">
+          <h2>Select Mode</h2>
+          <p class="label">Who are you playing?</p>
+          <div class="pill-group" id="modeGroup">
+            <button class="pill active" data-mode="robot">Play vs Robot</button>
+            <button class="pill" data-mode="human">Play vs Human</button>
+          </div>
+          <div class="nav-row">
+            <button class="ghost" id="modeBackBtn">Back</button>
+            <button class="primary" id="modeNextBtn">Continue</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-difficulty">
+        <div class="panel stack">
+          <h2>Robot Difficulty</h2>
+          <p class="label">Pick how clever the robot should be.</p>
+          <div class="pill-group" id="difficultyGroup">
+            <button class="pill active" data-difficulty="easy">Easy</button>
+            <button class="pill" data-difficulty="medium">Medium</button>
+            <button class="pill" data-difficulty="hard">Hard</button>
+          </div>
+          <p class="hint" id="difficultyHint">Easy: robot plays fair and random.</p>
+          <div class="nav-row">
+            <button class="ghost" id="difficultyBackBtn">Back</button>
+            <button class="primary" id="difficultyNextBtn">Start Game</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view" id="view-game">
+        <div class="toolbar">
+          <button class="pill ghost" id="changeSetupBtn">Change Setup</button>
+          <button class="pill ghost" id="resetBtn">Reset Match</button>
+        </div>
+        <div class="grid">
+          <section class="panel">
+            <h2>Play a Round</h2>
+            <p class="hint" id="selectionSummary">Mode: Robot · Difficulty: Easy</p>
+            <div class="field">
+              <p class="label">Take Your Turn</p>
+              <div class="choices" id="choiceButtons">
+                <button class="choice" data-move="rock">Rock</button>
+                <button class="choice" data-move="paper">Paper</button>
+                <button class="choice" data-move="scissors">Scissors</button>
+              </div>
+              <p class="hint" id="turnHint">You vs Robot. First to strike wins the round.</p>
+            </div>
+          </section>
+
+          <section class="panel score-panel">
+            <h2>Scoreboard</h2>
+            <div class="score-grid">
+              <div>
+                <p class="label">Player 1</p>
+                <p class="score" id="scoreP1">0</p>
+              </div>
+              <div>
+                <p class="label">Player 2 / Robot</p>
+                <p class="score" id="scoreP2">0</p>
+              </div>
+              <div>
+                <p class="label">Ties</p>
+                <p class="score" id="scoreTie">0</p>
+              </div>
+            </div>
+            <div class="result" id="resultText">Make your first move.</div>
+          </section>
+        </div>
+
+        <section class="panel history-panel">
+          <h2>History</h2>
+          <div class="history" id="historyLog"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
